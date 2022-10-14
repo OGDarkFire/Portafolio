@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Crear Usuario</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <!-- Bootstrap + JohnDoe main styles -->
+	<link rel="stylesheet" href="{% static 'css/StyleWeb.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    {% load crispy_forms_tags %} 
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'AgregarTareaSub' %}" class="nav-link">Crear Tareas Subordinadas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'ListarTareaSub' %}" class="nav-link">Listar Tareas subordinadas</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'employee' %}" class="nav-link">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Resume Section-->
+    <section class="section" id="resume">
+        <div class="container">
+            <h2 class="mb-5"><span class="text-danger"></span> Crear Tarea Subordinadas</h2>
+           
+            <div class="row">
+                <div class="col-12 col-md-6 offset-med-3">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <form action="" method="post">
+
+                                {% csrf_token %}
+                                {{ form | crispy}}
+                                        
+                                <div class="d-flex justify-content-center">
+                                    <input type="reset" value="Cancelar" class="btn btn-secondary">
+                                    <input type="submit" value="Guardar" class="btn btn-primary">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope  -->
+    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+    
+    <!-- Google mpas -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- JohnDoe js -->
+    <script src="assets/js/johndoe.js"></script>
+
+</body>
+</html>
